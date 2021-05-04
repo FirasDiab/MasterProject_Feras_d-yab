@@ -1,5 +1,7 @@
 @extends('dashboard_layouts.admin_main')
-
+@section('title')
+    Category
+@endsection
 @section('content')
 
     <div class="row justify-content-center">
@@ -49,6 +51,7 @@
             <div class="row m-t-30">
                 <div class="col-md-12">
                     <!-- DATA TABLE-->
+                    <div class="card bg-light">
                     <div class="table-responsive m-b-40">
                         <div class="card-header text-center bg-light"><strong>Category Table</strong></div>
                         <table class="table table-borderless table-data3">
@@ -76,6 +79,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                    </div>
                     </div>
                     <!-- END DATA TABLE-->
                 </div>

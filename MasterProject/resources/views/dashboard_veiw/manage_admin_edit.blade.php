@@ -1,5 +1,7 @@
 @extends('dashboard_layouts.admin_main')
-
+@section('title')
+    Admin Edit
+@endsection
 @section('content')
 
     <div class="row justify-content-center">
@@ -34,10 +36,10 @@
                         </div>
                         <div class="form-group">
                             <label for="cc-number" class="control-label mb-1">Password</label>
-                            <input id="cc-number" value="{{$admin->password}}" name="password" type="password"
+                            <input id="cc-number" name="password" type="password"
                                    class="form-control cc-number
                             identified
-                            visa" value="">
+                            visa" >
                             @error('password')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror

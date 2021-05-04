@@ -127,7 +127,6 @@ class AdminController extends Controller
 //    public function edituser($id)
 //    {
 //        $users =  User::where('id','=',$id)->first();
-//        return view('dashboard_veiw.manage_user_edit',compact('users'));
 //
 //    }
 
@@ -140,7 +139,6 @@ class AdminController extends Controller
 //        $users->password =$request->password;
 //        $users->save();
 //        return redirect('/dashboard/manage_user');
-////        return view('dashboard_veiw.manage_user_edit');
 //    }
 
     public function userdestroy($id)

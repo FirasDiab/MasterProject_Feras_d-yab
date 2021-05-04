@@ -11,7 +11,7 @@ class UserRegister extends Controller
     public function validation($request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'name' => 'required',
             'password' => 'required|min:8|max:32',
             'mobile' => 'required | Digits:10'

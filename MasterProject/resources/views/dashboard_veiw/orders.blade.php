@@ -1,19 +1,16 @@
 @extends('dashboard_layouts.admin_main')
 
+@section('title')
+    Orders
+@endsection
+
 @section('content')
 
-{{--@foreach($orders as $order)--}}
-{{--    @foreach($order->cart->items as $item)--}}
-{{--        <span class="badge">{{$item['price']}} $</span>--}}
-{{--        {{$item['name']}} | {{$item['qty']}}--}}
-{{--    @endforeach--}}
-
-{{--    Total : $ {{$order->cart->totalPrice}}--}}
-{{--@endforeach--}}
 
 <div class="row m-t-30">
     <div class="col-md-12">
         <!-- DATA TABLE-->
+        <div class="card bg-light">
         <div class="table-responsive m-b-40">
             <div class="card-header text-center bg-light"><strong>Orders Table</strong></div>
             <table class="table table-borderless table-data3">
@@ -28,9 +25,6 @@
                     <th>Country</th>
                     <th>City</th>
                     <th>Postal</th>
-{{--                    <th>Image</th>--}}
-{{--                    <th>Edit</th>--}}
-{{--                    <th>Delete</th>--}}
                 </tr>
                 </thead>
                 <tbody>
@@ -54,6 +48,7 @@
                 </tbody>
             </table>
         </div>
+        </div>
         <!-- END DATA TABLE-->
     </div>
 </div>
@@ -62,6 +57,7 @@
 <div class="row m-t-30">
     <div class="col-md-12">
         <!-- DATA TABLE-->
+        <div class="card bg-light">
         <div class="table-responsive m-b-40">
             <div class="card-header text-center bg-light"><strong>Orders Table</strong></div>
             <table class="table table-borderless table-data3">
@@ -88,7 +84,6 @@
                         <td>$ {{$item['price']}}</td>
                         <td>{{$item['name']}} </td>
                         <td>{{$item['qty']}}</td>
-{{--                        <td>{{$item['image']}}</td>--}}
                         <td>{{$item['size']}}</td>
                         <td>{{$item['color']}}</td>
                         <td><img src="{{asset("uploads/images/$item[image]")}}" style="height: 90px; width:90px;"></td>
@@ -104,18 +99,19 @@
                 </tbody>
             </table>
         </div>
+        </div>
         <!-- END DATA TABLE-->
 
         <div class="row m-t-30">
             <div class="col-md-12">
                 <!-- DATA TABLE-->
+                <div class="card bg-light">
                 <div class="table-responsive m-b-40">
                     <div class="card-header text-center bg-light"><strong>Orders Table</strong></div>
                     <table class="table table-borderless table-data3">
                         <thead class="bg-info">
                         <tr>
                             <th>ID</th>
-{{--                            <th>Edit</th>--}}
                             <th>Delete</th>
                         </tr>
                         </thead>
@@ -131,9 +127,9 @@
                         </tbody>
                     </table>
                 </div>
+                </div>
                 <!-- END DATA TABLE-->
-{{--            </div>--}}
-{{--        </div>--}}
+
     </div>
 </div>
 

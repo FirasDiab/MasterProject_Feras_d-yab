@@ -1,7 +1,7 @@
 @extends('layout.layouts')
 
 @section('title')
-    Dress
+    Contact us - Fustanek
 @endsection
 
 @section('content')
@@ -10,18 +10,9 @@
     <div class="container">
         <ol class="breadcrumb underline">
             <li><a href="/">Home</a></li>
-            <li>Services</li>
+            <li>Contact Us</li>
         </ol><!-- /.breadcrumb -->
     </div><!-- /.container -->
-
-
-
-
-
-
-
-
-
 
 
     <div class="work-procedure base-padd">
@@ -31,15 +22,15 @@
                 <div class="col-md-6">
                     <div class="inner">
                         <a href="#"><img src="{{asset('assets/img/work-procedure/1.png')}}" alt="" class="img-responsive"></a>
-                        <h3 class="font-30-for-reg-0">RENT</h3>
-                        <p class="font-16-for-reg-0"><a href="#">Lorem ipsum </a>dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        <h3 class="font-30-for-reg-0">BUY</h3>
+                        <h5 >You can have anything in life if you dress for it . </h5>
                     </div><!-- /.inner -->
                 </div> <!-- /.col-md-3  -->
                 <div class="col-md-6">
                     <div class="inner">
                         <a href="#"><img src="{{asset('assets/img/work-procedure/2.png')}}" alt="" class="img-responsive"></a>
                         <h3 class="font-30-for-reg-0">WEAR</h3>
-                        <p class="font-16-for-reg-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <a href="#"> do eiusmod </a> tempor incididunt ut labore et dolore magna aliqua. </p>
+                        <h5>Style is way to say who you are without speaking .</h5>
                     </div><!-- /.inner -->
                 </div> <!-- /.col-md-3  -->
             </div><!-- /.row -->
@@ -93,9 +84,9 @@
                     <div class="inner-element">
                         <i class="fas fa-phone-alt"></i>
                         <h4 class="font-25-pla-reg-0">Call Us At</h4>
-                        <p>(+678) 9870352</p>
-                        <p>(+678) 00017338829</p>
-                        <p>dressrental@mail.com</p>
+                        <p>+962-778-870-794</p>
+                        <p>+962-778-870-794</p>
+                        <p>info@fustanek.com</p>
                     </div><!-- /.inner-element -->
                 </div><!-- /.col-sm-4 -->
 
@@ -105,13 +96,8 @@
                         <h4 class="font-25-pla-reg-0">Our Address</h4>
                         <div class="portion">
                             <h4 class="font-18-pla-reg-2">Head Office</h4>
-                            <p>Road 3, West side lane</p>
-                            <p>Texas, USA</p>
-                        </div><!-- /.portion -->
-                        <div class="portion">
-                            <h4 class="font-18-pla-reg-2">New york Office</h4>
-                            <p>Road 11, Library road</p>
-                            <p>NY, USA</p>
+                            <p>Al-hashmi Al-shmali</p>
+                            <p>Amman, Jordan</p>
                         </div><!-- /.portion -->
                     </div><!-- /.inner-element -->
                 </div><!-- /.col-sm-4 -->
@@ -120,8 +106,8 @@
                     <div class="inner-element">
                         <i class="far fa-clock"></i>
                         <h4 class="font-25-pla-reg-0">WORKING HOUR</h4>
-                        <p>Monday - Friday: 6am - 10pm</p>
-                        <p>Saterday - Sunday: 10am - 2pm</p>
+                        <p>Sunday - Thursday: 10am - 10pm</p>
+                        <p>Friday - Saturday: 2pm - 10pm</p>
                     </div><!-- /.inner-element -->
                 </div><!-- /.col-sm-4 -->
 

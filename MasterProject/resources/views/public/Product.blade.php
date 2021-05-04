@@ -1,11 +1,10 @@
 @extends('layout.layouts')
 
 @section('title')
-    Dress
+{{$product->name}}
 @endsection
 
 @section('content')
-    {{ print_r(session()->get('cart')) }}
 
     @if( session()->has('success'))
         <div class="alert alert-success text-center"> {{session()->get('success')}}</div>
@@ -13,7 +12,7 @@
     <div class="container">
         <ol class="breadcrumb underline">
             <li><a href="/">Home</a></li>
-            <li><a href="/a/{{$product->category_id}}">Dresses</a></li>
+            <li><a href="/category/{{$product->category_id}}">{{$category[0]['name']}}</a></li>
             <li>{{$product->name}}</li>
         </ol><!-- /.breadcrumb -->
     </div><!-- /.container -->
@@ -39,35 +38,24 @@
                 </div><!-- /.col-sm-5 -->
                 <div class="col-sm-7">
                     <div class="rq-inner">
-                        <a href="#" class="font-30-for-reg-0">{{$product->name}}</a>
-                        <h3 class="font-18-for-reg-0">Color :  <span>{{$product->color}}</span></h3>
-{{--                        <a href="#" class="rating" >--}}
-{{--                            <i class="fa fa-star" aria-hidden="true"></i>--}}
-{{--                            <i class="fa fa-star" aria-hidden="true"></i>--}}
-{{--                            <i class="fa fa-star" aria-hidden="true"></i>--}}
-{{--                            <i class="fa fa-star" aria-hidden="true"></i>--}}
-{{--                            <i class="fa fa-star-o ash" aria-hidden="true"></i>--}}
-{{--                            <span class="ash">(29)</span>--}}
-{{--                        </a><!-- /.rating -->--}}
+                        <h2>{{$product->name}}</h2>
+                        <h4>Color: {{$product->color}}</h4>
                         <h4>$ {{$product->price}} </h4>
-{{--                        <del> $99  </del> <span> 50% off /</span>--}}
+
 
 
                         <div class="row rq-margin">
                             <div class="col-sm-6">
-{{--                                <input type="hidden" name="product_id" value="{{$product->id}}">--}}
+
 
                                 <a href="/addToCart/{{$product->id}}" class="btn btn-success" style="height: auto">ADD TO CART</a>
-{{--                                <button type="button" id="addToCart" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">--}}
-{{--                                    ADD TO CART--}}
-{{--                                </button>--}}
                             </div><!-- /.col-sm-6 -->
                             <div class="col-sm-6">
                                 <div class="social-icon">
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                    <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="https://pinterest.com/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                                 </div>
                             </div><!-- /.col-sm-6 -->
                         </div><!-- /.row -->
@@ -102,6 +90,7 @@
                                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                                     <div class="panel-body">
                                         {{$product->desc}}
+
                                     </div>
                                 </div>
                             </div>
@@ -114,61 +103,32 @@
         </div>	<!-- /.container -->
     </div><!-- /.product-details -->
 
-    <div class="favorites base-padd">
-        <h2>OUR FAVOURITES</h2>
-        <div class="container">
-            <div class="owl-favorites owl-carousel owl-theme">
-                @foreach($products as $product)
-                    <div class="item">
-                        <figure>
-                            <img src="{{asset("uploads/images/$product->image")}}" alt="">
-                            <a href="booking.html">View</a>
-                        </figure>
-                        <a href="/b/{{$product->id}}"><h3 class="font-20-for-reg-0">{{$product->name}}</h3></a>
-                        <p class="font-16-for-reg-0">{{$product->color}}</p>
-                        <div class="elements">
-                            <span class="font-25-for-reg-0">{{$product->price}}</span>
 
+    <div class="content base-padd">
+        <div class="container-fulid">
+            <div class="content-wrapper">
+                <h2 class="our-favourite">OUR FAVOURITES</h2>
+                <div class="row">
+                    @foreach($products as $product)
+                        <div class="col-lg-3 col-md-4 col-sm-12">
+                            <div class="card" style="margin-bottom: 20px; text-align: center">
+                                <img src="{{asset("uploads/images/$product->image")}}" style="height: 250px; width: 200px;" alt="{{$product->name}}">
+                                <div class="text-center">
+                                    <a href="/product/{{$product->id}}"><h3>{{$product->name}}</h3></a>
+                                    {{--                                <p>Designer</p>--}}
+                                    <h5 class="">Color: {{$product->color}}</h5>
+                                    <h5 class=""> Price: $ {{$product->price}}</h5>
+                                    <a href="/product/{{$product->id}}"><button type="button" class="btn btn-primary glow px-4 category-btn">See Product</button></a>
+                                </div>
+                            </div>
+                        </div>
 
-                        </div><!-- /.elements -->
-                    </div><!-- /.item -->
-                @endforeach
-    </div><!-- /.owl-favorites -->
-    </div><!-- /.container -->
-    </div><!-- /.favorites -->
-{{--    <script type="text/javascript">--}}
-{{--        $(document).ready(function (){--}}
-{{--            $('#addToCart').on('click',function (e){--}}
-{{--                $.ajax({--}}
-{{--                    type: "GET",--}}
-{{--                    url: "/addToCart/{product}",--}}
-{{--                    data: $('#addToCart').serialize(),--}}
-{{--                    success: function (response){--}}
-{{--                        Swal.fire({--}}
-{{--                            icon: 'success',--}}
-{{--                            title: 'Thank you',--}}
-{{--                            text: 'We will contact with you soon!'--}}
-{{--                        })--}}
-{{--                    },--}}
-{{--                    error: function (error){--}}
-{{--                        Swal.fire({--}}
-{{--                            icon: 'error',--}}
-{{--                            title: 'Oops...',--}}
-{{--                            text: 'Enter Valid Data'--}}
-{{--                        })--}}
-{{--                    }--}}
-{{--                });--}}
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}}
-{{--    <script type="text/javascript">--}}
-{{--        $(document).ready(function () {--}}
-{{--            $('#addToCart').click(function (){--}}
-{{--                alert('Clciked');--}}
-{{--            });--}}
+                    @endforeach
 
-{{--        });--}}
-{{--    </script>--}}
-{{--    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>--}}
+                </div>
+
+            </div><!-- /.content-wrapper -->
+        </div><!-- /.container-fulid -->
+    </div><!-- /.content -->
 
 @endsection

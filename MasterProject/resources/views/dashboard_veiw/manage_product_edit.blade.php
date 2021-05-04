@@ -1,4 +1,7 @@
 @extends('dashboard_layouts.admin_main')
+@section('title')
+    Products Edit
+@endsection
 @section('content')
     <div class="row justify-content-center">
         <div class="col-lg-12 ">
@@ -29,18 +32,6 @@
 
                         </div>
 
-{{--                        <div class="row form-group">--}}
-{{--                            <div class="col col-md-3">--}}
-{{--                                <label for="select" class=" form-control-label">Place Name</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-12 col-md-9">--}}
-{{--                                <select name="select_place" id="select" class="form-control">--}}
-{{--                                    @foreach($places as $place)--}}
-{{--                                        <option value="{{$place->id}}">{{$place->name}}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                         <div class="row form-group">
                             <div class="col col-md-3">
                                 <label for="textarea-input" class=" form-control-label">Description</label>
