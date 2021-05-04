@@ -7,6 +7,7 @@ use App\Category;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
@@ -62,7 +63,17 @@ class OrderController extends Controller
         foreach ( session()->get('cart')->items as $product) {
             Product::where('id' , '=' , $product['id'])->delete();
         }
+
+        if ( Auth::user() ) {
+            $userId = Auth::user()->id;
+        }
+        else {
+            $userId = null;
+        }
+
+
         Order::create([
+            "user_id" => $userId,
             "fname"         =>  $request->fname,
             "lname"           =>  $request->lname,
             "email"           =>  $request->email,
@@ -71,12 +82,16 @@ class OrderController extends Controller
             "city"      =>  $request->city,
             "postal"          =>  $request->postal,
             "address"          =>  $request->address,
-            "cart" => serialize(session()->get('cart'))
+            "state"          =>  $request->state,
+            "cart" => serialize(session()->get('cart')),
+
         ]);
         $request->session()->forget('cart');
 
-        return 'Thank you';
+        $orderId = Order::latest('id')->first()->id;
 
+
+        return view('public.ThankYouPage' , compact('orderId'));
     }
 
     /**
@@ -159,8 +174,8 @@ public function addToCart(Product $product) {
             $cart = null;
         }
         return view('public.landingPage',compact('categories','products','cart'));
-//        return view('layout.layouts' , compact('cart'));
     }
+
 
 
 

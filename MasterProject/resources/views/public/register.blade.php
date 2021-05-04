@@ -1,7 +1,7 @@
 @extends('layout.layouts')
 
 @section('title')
-    Dress
+    Register
 @endsection
 
 @section('content')
@@ -17,13 +17,13 @@
             <div class="form-group">
                 <label for="firstName" class="col-sm-3 control-label">Name</label>
                 <div class="col-sm-9">
-                    <input type="text" name="name" id="firstName" placeholder="Name" class="form-control" autofocus>
+                    <input type="text" name="name" id="firstName" placeholder="Name" class="form-control" required autofocus>
                 </div>
             </div>
             <div class="form-group">
                 <label for="firstName" class="col-sm-3 control-label">Mobile</label>
                 <div class="col-sm-9">
-                    <input type="text" name="mobile" id="firstName" placeholder="Mobile" class="form-control" autofocus>
+                    <input type="text" name="mobile" id="firstName" placeholder="Mobile" class="form-control" required autofocus>
                 </div>
                 @error('mobile')
                 <div class="text-danger">{{ $message }}</div>
@@ -32,13 +32,13 @@
             <div class="form-group">
                 <label for="email" class="col-sm-3 control-label">Email</label>
                 <div class="col-sm-9">
-                    <input type="email" id="email" placeholder="Email" class="form-control" name="email">
+                    <input type="email" id="email" placeholder="Email" class="form-control" required name="email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="password" class="col-sm-3 control-label">Password</label>
                 <div class="col-sm-9">
-                    <input type="password" id="password" placeholder="Password" class="form-control" name="password">
+                    <input type="password" id="password" placeholder="Password" required class="form-control" name="password">
                 </div>
                 @error('password')
                 <div class="text-danger">{{ $message }}</div>

@@ -11,14 +11,12 @@
 |
 */
 Route::get('/','CategoryController@showCategory');
-//Route::get('/', function () {
-//    return view('public.landingPage');
-//});
-Route::get('/a', 'ProductController@allProducts');
 
-Route::get('/a/{id}', 'CategoryController@categoryFind');
+Route::get('/allProducts', 'ProductController@allProducts');
 
-Route::get('/b/{id}', 'ProductController@showProduct');
+Route::get('/category/{id}', 'CategoryController@categoryFind');
+
+Route::get('/product/{id}', 'ProductController@showProduct');
 Route::get('/about-us', function () {
     return view('public.about-us');
 });
@@ -26,12 +24,6 @@ Route::get('/contact-us', function () {
     return view('public.contact-us');
 });
 
-//Route::get('/dashboard/admin', function () {
-//    return view('dashboard_veiw.manage_admin');
-//});
-//Route::get('/dashboard/admin1', function () {
-//    return view('dashboard_veiw.manage_admin_edit');
-//});
 Route::middleware(['auth:admin'])->group(function () {
     Route::post('/dashboard/admin','AdminController@store');
     Route::get('/dashboard/admin','AdminController@create');
@@ -49,16 +41,6 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard/manage_user/{user}','AdminController@userdestroy');
 });
 
-
-
-
-//Route::get('/dashboard/manage_user', function () {
-//    return view('dashboard_veiw.manage_user');
-//});
-//Route::get('/dashboard/manage_user1', function () {
-//    return view('dashboard_veiw.manage_user_edit');
-//});
-
 //category[CRUD]
 Route::middleware(['auth:admin'])->group(function () {
     Route::post('/dashboard/category','CategoryController@store');
@@ -67,15 +49,6 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/dashboard/category/{category}/edit','CategoryController@edit');
     Route::Put('/dashboard/category/{category}','CategoryController@update');
 });
-
-
-//Route::get('/dashboard/category', function () {
-//    return view('dashboard_veiw.manage_category');
-//});
-//Route::get('/dashboard/category1', function () {
-//    return view('dashboard_veiw.manage_category_edit');
-//});
-
 
 //product[CRUD]
 Route::middleware(['auth:admin'])->group(function () {
@@ -92,16 +65,6 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/orders/{id}','OrderController@destroy');
 });
 
-//Route::get('/dashboard/manage_products','CategoryController@showCategory');
-//Route::get('/dashboard/manage_products', function () {
-//    return view('dashboard_veiw.manage_room');
-//});
-
-//Route::get('/dashboard/manage_images', function () {
-//    return view('dashboard_veiw.manage_image');
-//});
-
-//Route::get('/addToCart/{id}', 'OrderController@addToCart');
 
 Route::get('/addToCart/{product}', 'OrderController@addToCart');
 
@@ -115,9 +78,6 @@ Route::get('/register', function () {
 });
 Route::post('/' , 'UserRegister@store');
 Route::get('/delete-user/{id}' , 'UserRegister@destroy');
-//Route::any('/', 'OrderController@headerCart');
-
-
 
 
 Auth::routes();

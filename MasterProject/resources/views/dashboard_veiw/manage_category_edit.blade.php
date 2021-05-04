@@ -1,5 +1,7 @@
 @extends('dashboard_layouts.admin_main')
-
+@section('title')
+    Category Edit
+@endsection
 @section('content')
 
     <div class="row justify-content-center">

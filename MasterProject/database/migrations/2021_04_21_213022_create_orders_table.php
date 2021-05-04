@@ -15,6 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->nullable();
             $table->string('fname');
             $table->string('lname');
             $table->string('email');
@@ -22,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->string('country');
             $table->string('city');
-            $table->string('state')->nullable();
+            $table->string('state');
             $table->string('postal');
             $table->text('cart');
             $table->timestamps();

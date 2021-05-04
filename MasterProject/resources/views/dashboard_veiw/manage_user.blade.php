@@ -1,10 +1,15 @@
 @extends('dashboard_layouts.admin_main')
 
+@section('title')
+    Users
+@endsection
+
 @section('content')
 
                 <div class="row m-t-30">
                     <div class="col-md-12">
                         <!-- DATA TABLE-->
+                        <div class="card bg-light">
                         <div class="table-responsive m-b-40">
                             <div class="card-header text-center bg-light"><strong>User Table</strong></div>
                             <table class="table table-borderless table-data3">
@@ -32,6 +37,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                        </div>
                         </div>
                         <!-- END DATA TABLE-->
                     </div>

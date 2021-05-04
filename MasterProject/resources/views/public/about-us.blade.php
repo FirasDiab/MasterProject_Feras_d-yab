@@ -1,7 +1,7 @@
 @extends('layout.layouts')
 
 @section('title')
-    Dress
+    About us - Fustanek
 @endsection
 
 @section('content')
@@ -12,59 +12,6 @@
             <li>About us</li>
         </ol><!-- /.breadcrumb -->
     </div><!-- /.container -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <div class="execution">
@@ -79,124 +26,20 @@
 
 
     <div class="mission base-padd" id="our_mission">
-        <h2>OUR MISSION</h2>
+        <h2>Welcome To Fustanek!</h2>
         <div class="container">
             <div class="inner-element">
-                <p class="font-20-for-reg-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                    remaining essentially unchanged. <a href="#">It was popularised in the 1960s with the release of Letraset sheets containing </a> Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h6>
-                <p class="font-20-for-reg-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                <h4 style="line-height: 50px;
+    text-align: justify;">
+
+                    We aim to offer our customers a variety of the latest Dresses. We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget-friendly products. We offer all of this while providing excellent customer service and friendly support.
+
+                    We always keep an eye on the latest trends in Fashion and put our customers’ wishes first. That is why we have satisfied customers all over the world, and are thrilled to be a part of the Fashion industry.
+
+                    The interests of our customers are always top priority for us, so we hope you will enjoy our products as much as we enjoy making them available to you.</h4>
             </div><!-- /.inner-element -->
         </div><!-- /.container -->
     </div><!-- /.mission -->
-
-
-
-    <div class="execution executiontwo">
-        <div class="elements">
-            <h1>WE HAVE THE BEST<br> QUALITY TEAM</h1>
-            <h4>OUR TEAM</h4>
-            <a class="slow-down" href="#our_mission2"><img src="../assets/dist/img/down.png" alt="down"></a>
-        </div><!-- /.elements -->
-    </div><!-- /.execution -->
-
-
-
-
-
-
-
-    <div class="team base-padd" id="our_mission2">
-        <h2>OUR TEAM</h2>
-        <div class="container">
-            <div class="row">
-
-
-                <div class="col-sm-4">
-                    <div class="element">
-
-                        <figure>
-                            <img src=../assets/dist/img/team/1.png alt="">
-                        </figure>
-                        <h5>Lara</h5>
-                        <h6>Co-founder/CEO</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    </div><!-- /.element -->
-                </div><!-- /.col-sm-4 -->
-
-                <div class="col-sm-4">
-                    <div class="element">
-
-                        <figure>
-                            <img src=../assets/dist/img/team/2.png alt="">
-                        </figure>
-                        <h5>Dean</h5>
-                        <h6>Co-founder/COO</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    </div><!-- /.element -->
-                </div><!-- /.col-sm-4 -->
-
-                <div class="col-sm-4">
-                    <div class="element">
-
-                        <figure>
-                            <img src=../assets/dist/img/team/3.png alt="">
-                        </figure>
-                        <h5>Brunte</h5>
-                        <h6>Customer Happiness</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    </div><!-- /.element -->
-                </div><!-- /.col-sm-4 -->
-
-                <div class="col-sm-4">
-                    <div class="element">
-
-                        <figure>
-                            <img src=../assets/dist/img/team/4.png alt="">
-                        </figure>
-                        <h5>Joshep</h5>
-                        <h6>Head of Engineering</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    </div><!-- /.element -->
-                </div><!-- /.col-sm-4 -->
-
-                <div class="col-sm-4">
-                    <div class="element">
-
-                        <figure>
-                            <img src=../assets/dist/img/team/3.png alt="">
-                        </figure>
-                        <h5>Brunte</h5>
-                        <h6>Customer Happiness</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    </div><!-- /.element -->
-                </div><!-- /.col-sm-4 -->
-
-                <div class="col-sm-4">
-                    <div class="element">
-
-                        <figure>
-                            <img src=../assets/dist/img/team/4.png alt="">
-                        </figure>
-                        <h5>Joshep</h5>
-                        <h6>Head of Engineering</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipis elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    </div><!-- /.element -->
-                </div><!-- /.col-sm-4 -->
-
-
-
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.team -->
-
-
 
 
 @endsection

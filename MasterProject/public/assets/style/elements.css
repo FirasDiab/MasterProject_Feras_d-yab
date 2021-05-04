@@ -1095,6 +1095,14 @@ body {
     color: #333;
     background-color: #fff;
 }
+.category-btn {
+    font-weight: bolder;
+    width: 35%;
+    height: 50px;
+    font-size: 20px !important;
+    text-align: center;
+    background-color: #392606 !important;
+}
 input,
 button,
 select,
@@ -14217,6 +14225,9 @@ input::-webkit-input-placeholder {
     .community h2 {
         font-size: 22px;
         line-height: 30px;
+    }
+    .our-favourite {
+        font-size: 28px;
     }
 }
 .community .container-fluid.wrapper {

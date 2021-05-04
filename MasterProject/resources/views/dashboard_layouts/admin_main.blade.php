@@ -8,7 +8,7 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
-
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
     <!-- Title Page-->
     <title>@yield('title')</title>
 
@@ -42,8 +42,8 @@
         <div class="header-mobile__bar">
             <div class="container-fluid">
                 <div class="header-mobile-inner">
-                    <a class="logo" href="index.html">
-                        <img src="{{ asset('dashboard_theme/images/icon/logo.png')}}" alt="CoolAdmin" />
+                    <a class="logo" href="/dashboard/admin">
+                        <img src="{{asset('assets/img/FustanekDashmob.png')}}" alt="Logo" />
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -56,99 +56,42 @@
         <nav class="navbar-mobile">
             <div class="container-fluid">
                 <ul class="navbar-mobile__list list-unstyled">
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li>
-                                <a href="index.html">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href="index2.html">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href="index3.html">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href="index4.html">Dashboard 4</a>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li>
-                        <a href="chart.html">
-                            <i class="fas fa-chart-bar"></i>Charts</a>
-                    </li>
-                    <li>
-                        <a href="table.html">
-                            <i class="fas fa-table"></i>Tables</a>
-                    </li>
-                    <li>
-                        <a href="form.html">
-                            <i class="far fa-check-square"></i>Forms</a>
-                    </li>
-                    <li>
-                        <a href="calendar.html">
-                            <i class="fas fa-calendar-alt"></i>Calendar</a>
-                    </li>
-                    <li>
-                        <a href="map.html">
-                            <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        <a href="">{{ Auth::guard('admin')->user()->fullname }}</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-copy"></i>Pages</a>
-                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li>
-                                <a href="login.html">Login</a>
-                            </li>
-                            <li>
-                                <a href="register.html">Register</a>
-                            </li>
-                            <li>
-                                <a href="forget-pass.html">Forget Password</a>
-                            </li>
-                        </ul>
+                        <a class="js-arrow" href="/dashboard/admin">
+                            <i class="fas fa-tachometer-alt"></i>Admins</a>
                     </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#">
-                            <i class="fas fa-desktop"></i>UI Elements</a>
-                        <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li>
-                                <a href="button.html">Button</a>
-                            </li>
-                            <li>
-                                <a href="badge.html">Badges</a>
-                            </li>
-                            <li>
-                                <a href="tab.html">Tabs</a>
-                            </li>
-                            <li>
-                                <a href="card.html">Cards</a>
-                            </li>
-                            <li>
-                                <a href="alert.html">Alerts</a>
-                            </li>
-                            <li>
-                                <a href="progress-bar.html">Progress Bars</a>
-                            </li>
-                            <li>
-                                <a href="modal.html">Modals</a>
-                            </li>
-                            <li>
-                                <a href="switch.html">Switchs</a>
-                            </li>
-                            <li>
-                                <a href="grid.html">Grids</a>
-                            </li>
-                            <li>
-                                <a href="fontawesome.html">Fontawesome Icon</a>
-                            </li>
-                            <li>
-                                <a href="typo.html">Typography</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="/dashboard/manage_user">
+                            <i class="fas fa-users"></i>Users</a>
                     </li>
-                </ul>
+                    <li>
+                        <a href="/dashboard/category">
+                            <i class="fas fa-chart-bar"></i>Categories</a>
+                    </li>
+                    <li>
+                        <a href="/dashboard/manage_products">
+                            <i class="fab fa-product-hunt"></i>Products</a>
+                    </li>
+                    <li>
+                        <a href="/orders">
+                            <i class="fas fa-box"></i>Orders</a>
+                    </li>
+    <li>
+        <a class="dropdown-item" href="/adminLogout"
+           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+        <form id="logout-form" action="/adminLogout" method="POST" style="display: none;">
+            @csrf
+        </form>
+    </li>
+                        </ul>
+
             </div>
         </nav>
     </header>
@@ -157,7 +100,7 @@
     <!-- MENU SIDEBAR-->
     <aside class="menu-sidebar d-none d-lg-block">
         <div class="logo">
-            <img src="{{asset('public_theme/images/logo.png')}}" alt="" title="">
+            <img src="{{asset('assets/img/FustanekDash.png')}}" alt="Logo" title="">
         </div>
         <div class="menu-sidebar__content js-scrollbar1">
             <nav class="navbar-sidebar">
@@ -178,25 +121,16 @@
                             <i class="fas fa-chart-bar"></i>Manage Category</a>
                     </li>
 
-{{--                    <li>--}}
-{{--                        <a href="/dashboard/manage_places">--}}
-{{--                            <i class="fas fa-home"></i>Manage places</a>--}}
-{{--                    </li>--}}
-
                     <li>
                         <a href="/dashboard/manage_products">
-                            <i class="fas fa-hotel"></i>Manage Products</a>
+                            <i class="fab fa-product-hunt"></i>Manage Products</a>
                     </li>
 
                     <li>
                         <a href="/orders">
-                            <i class="fas fa-images"></i>Manage Orders</a>
+                            <i class="fas fa-box"></i>Manage Orders</a>
                     </li>
 
-{{--                    <li>--}}
-{{--                        <a href="">--}}
-{{--                            <i class="fas fa-book"></i>Booking</a>--}}
-{{--                    </li>--}}
 
                 </ul>
             </nav>
@@ -207,7 +141,7 @@
     <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- HEADER DESKTOP-->
-        <header class="header-desktop">
+        <header class="header-desktop d-none d-lg-block d-xl-block">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap">
@@ -221,7 +155,7 @@
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="content">
                                         <a class="js-acc-btn" href="#">welcome  {{ Auth::guard('admin')->user()->fullname }}</a>
-{{--                                        {{dd(Auth::guard('admin')->user()->fullname )}}--}}
+
                                     </div>
                                     <div class="account-dropdown js-dropdown">
                                         <div class="info clearfix">
@@ -263,13 +197,6 @@
 
                     @yield('content')
 
-
-
-                    <div class="col-md-12">
-                        <div class="copyright">
-                            <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

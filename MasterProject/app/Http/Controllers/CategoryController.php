@@ -32,7 +32,7 @@ class CategoryController extends Controller
     public function showCategory()
     {
         $categories=Category::all();
-        $products = Product::all();
+        $products = Product::all()->take(6);
         return view('public.landingPage',compact('categories','products'));
     }
 
@@ -137,11 +137,12 @@ class CategoryController extends Controller
     }
 
     public function categoryFind($id){
+          $prod = Product::where('category_id', '=', $id)->get();
+          $products = Product::where('category_id', '=', $id)->paginate(6);
+          $category = Category::where('id', '=', $id)->get();
+          $productCount = $prod->count();
 
-//        $category = Category::where('id','=',$id)->first();
-          $products = Product::where('category_id', '=', $id)->get();
-
-        return view('public.cat_products',compact('products'));
+        return view('public.cat_products',compact('products','productCount','category'));
 
 
     }
@@ -151,5 +152,10 @@ class CategoryController extends Controller
 
         return view('layout.layouts',compact('categories'));
 
+    }
+
+    public function header(){
+        $categories = Category::all();
+        return view('layout.layouts', compact('categories'));
     }
 }

@@ -1,4 +1,7 @@
 @extends('dashboard_layouts.admin_main')
+@section('title')
+    Products
+@endsection
 @section('content')
     <div class="row justify-content-center">
         <div class="col-lg-12 ">
@@ -6,12 +9,6 @@
                 <div class="card-header">Manage Products</div>
                 <div class="card-body">
                     <div class="card-title">
-
-{{--                        @if(session('addroom'))--}}
-{{--                            <div class="alert alert-success" role="alert">--}}
-{{--                                The Room Was added Successfully !--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
 
                         <h3 class="text-center title-2">Create Product</h3>
                     </div>
@@ -46,18 +43,6 @@
                                 @enderror
                             </div>
                         </div>
-{{--                        <div class="row form-group">--}}
-{{--                            <div class="col col-md-3">--}}
-{{--                                <label for="select" class=" form-control-label">Place Name</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-12 col-md-9">--}}
-{{--                                <select name="select_place" id="select" class="form-control">--}}
-{{--                                    @foreach($places as $place)--}}
-{{--                                        <option value="{{$place->id}}">{{$place->name}}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
                         <div class="row form-group">
                             <div class="col col-md-3">
                                 <label for="textarea-input" class=" form-control-label">Description</label>
@@ -95,34 +80,6 @@
                                 @enderror
                             </div>
                         </div>
-
-
-
-
-{{--                        <div class="row form-group">--}}
-{{--                            <div class="col col-md-3">--}}
-{{--                                <label for="cc-name" class="control-label mb-1">Product Style</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-12 col-md-9">--}}
-{{--                                <input id="cc-name" value="{{ old('style') }}" name="style" type="text" class="form-control cc-name valid">--}}
-{{--                                @error('style')--}}
-{{--                                <div class="text-danger">{{ $message }}</div>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-
-{{--                        <div class="row form-group">--}}
-{{--                            <div class="col col-md-3">--}}
-{{--                                <label for="cc-name" class="control-label mb-1">Room Capacity</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-12 col-md-9">--}}
-{{--                                <input id="cc-name" value="{{ old('capacity') }}" name="capacity" type="text" class="form-control cc-name valid">--}}
-{{--                                @error('capacity')--}}
-{{--                                <div class="text-danger">{{ $message }}</div>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
 
                         <div class="row form-group">
                             <div class="col col-md-3">
@@ -163,6 +120,7 @@
             <div class="row m-t-30">
                 <div class="col-md-12">
                     <!-- DATA TABLE-->
+                    <div class="card bg-light">
                     <div class="table-responsive m-b-40">
                         <div class="card-header text-center bg-light"><strong>Products Table</strong></div>
                         <table class="table table-borderless table-data3">
@@ -201,6 +159,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                    </div>
                     </div>
                     <!-- END DATA TABLE-->
                 </div>

@@ -173,15 +173,17 @@ class ProductController extends Controller
     }
 
     public function showProduct($id) {
-//        $product = Product::where('id','=',$id)->get();
         $product = Product::find($id);
-        $products = Product::where('category_id','=',$product->category_id)->where('id','!=',$id)->take(5)->get();
-        return view('public.product',compact('product','products'));
+        $products = Product::where('category_id','=',$product->category_id)->where('id','!=',$id)->take(4)->get();
+        $category = Category::where('id', '=' , $product->category_id)->get();
+        return view('public.product',compact('product','products','category'));
     }
 
     public function allProducts() {
-        $products = Product::paginate(1);
-        return view('public.Products',compact('products'));
+        $prod = Product::all();
+        $products = Product::paginate(6);
+        $productCount = $prod->count();
+        return view('public.Products',compact('products','productCount'));
     }
     public function navBarProducts() {
         $products = Product::all();
